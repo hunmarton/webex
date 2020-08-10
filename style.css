@@ -1,0 +1,268 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Open+Sans:wght@300;400&display=swap');
+:root {
+    --tamnoPlava: #1d527c;  /* rgb(29, 82, 124) */
+    --svetloPlava: #459ad3; /* rgb(69, 154, 211) */
+    --orange: #fd7f45;      /* rgb(253, 127, 69) */
+    --tamnoSiva: #3c3b3c;
+    --svetloSiva: lightgray;
+    --bela: #fff;
+    --transition: .3s ease;
+    --padding: 100px 0;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    color: var(--tamnoSiva);
+    line-height: 1.6;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+a:hover{
+    transition: var(--transition);
+}
+button{
+    padding: 15px 30px;
+    border: 1px solid var(--bela);
+    background: transparent;
+    font-size: 1rem;
+    color: var(--bela);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+button:hover{
+    cursor: pointer;
+    background: var(--bela);
+    color: var(--tamnoSiva);
+    transition: var(--transition);
+}
+.container{
+    width: 80%;
+    margin: auto;
+}
+.headings{
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--tamnoPlava);
+}
+.headings::after{
+    display: block;
+    content: "";
+    height: 1px;
+    width: 100px;
+    background: var(--tamnoPlava);
+    margin: 20px 0;
+}
+/*********
+Navigacija
+*********/
+nav{
+    background: linear-gradient(to right, var(--orange),var(--tamnoPlava));
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 5px 0;
+}
+
+nav ul{
+    display: flex;
+}
+nav a{
+    color: var(--bela);
+    text-transform: uppercase;
+    padding: 0 30px;
+}
+nav a:hover{
+    color: var(--svetloSiva);
+}
+/********
+Header
+********/
+header{
+    background-image:linear-gradient(rgba(29, 82, 124,.8), rgba(253, 127, 69, .8)), url(img/baloon.jpg);
+    height: 95vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--bela);
+}
+header h1{
+    font-size: 3rem;
+    font-weight: 300;
+    line-height: 1.2;
+}
+header  span{
+    font-style: italic;
+    font-weight: 400;
+}
+header p{
+    font-size: 1.2rem;
+    padding: 30px 0;
+}
+/********
+About
+********/
+.about{
+    padding: var(--padding);
+    display: flex;
+    flex-wrap: wrap;
+}
+.about img{
+    width: 100%;
+
+}
+.about article{
+    flex: 1;
+}
+.about article:first-child{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.about p{
+    padding-right: 50px;
+}
+/*******
+Services
+********/
+.services{
+    padding: var(--padding);
+    background-image: linear-gradient(rgba(29,82,124,0.9),rgba(29,82,124,0.9)),url(img/header.jpg);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    color: var(--bela);
+}
+.services h2{
+    color: var(--bela);
+}
+.services .headings::after{    
+    background: var(--orange);   
+}
+.services .container{
+    display: flex;
+    flex-wrap: wrap;
+}
+.services article{
+    flex: 1;
+}
+.services article:first-child{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.services article:first-child i{
+    font-size: 5rem;
+    color: var(--orange);
+    padding: 20px;
+    flex: 1 1 50%;
+}
+.services p{
+    padding: 30px 0;
+}
+/*******
+Blog
+********/
+.blog{
+    padding: var(--padding);
+    text-align: center;
+}
+.blog img{
+    width: 100%;
+}
+.blog .row{
+    display: flex;
+    flex-wrap: wrap;
+}
+.blog article{
+    flex: 1;
+    margin: 20px;
+}
+.blog .headings::after{
+    margin: 20px auto;
+    background: var(--orange);
+}
+.blog button{
+    background: var(--tamnoPlava);
+    margin: 20px 0;
+}
+.blog button:hover{
+    background: var(--orange);
+}
+.blog p{
+    text-align: justify;
+}
+.blog h3{
+    font-size: 1.7rem;
+    padding: 20px 0;   
+}
+/********
+Footer
+********/
+footer{
+    padding: var(--padding);
+    background-image: linear-gradient(to right,rgba(253,127,69,0.9),rgba(29,82,124,0.9)),url(img/baloon.jpg);
+    color: var(--bela);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+footer a{
+    color: var(--tamnoPlava);
+    font-size: 2rem;
+    margin: 10px;
+}
+footer a:hover{
+    color: var(--svetloPlava);
+}
+footer p{
+    padding-top: 30px;
+}
+
+/******
+Responsive
+*******/
+@media(max-width:768px){
+    nav{
+        flex-direction: column;
+    }
+    nav a{
+            padding: 0 10px;
+        }
+    header{
+        height: 80vh;
+        text-align: center;
+    }    
+    header h1{
+        font-size: 2.5rem;
+    }
+    .container{
+        width: 90%;
+    }
+    .about article{
+        flex: 0 0 100%;
+        margin-bottom: 20px;
+    }
+    .services article{
+        flex: 0 0 100%;
+        margin-bottom: 20px;
+    }
+    .blog article{
+        flex: 0 0 100%;
+        margin: 20px 0; 
+        
+    }
+}
